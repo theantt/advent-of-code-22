@@ -1,4 +1,4 @@
-with open("day-2-input", "r") as my_input:
+with open("day-1-input", "r") as my_input:
     # Init empty list to store elf inventories
     elf_inventories = []
     # Init empty list to store current block of input
