@@ -30,10 +30,6 @@ with open("day-1-input", "r") as my_input:
         inventory_calories += int(line)
     elf_inventories.append(inventory_calories)
 
-#highest_calories = max(elf_inventories)
-#print(elf_inventories)
-# print(highest_calories)
-
 highest_value = -1
 highest_value_index = -1
 for i, value in enumerate(elf_inventories):
