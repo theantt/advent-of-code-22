@@ -3,14 +3,11 @@ import re
 with open("day-3-input", "r") as f:
     lines = f.readlines()
 
-# with open("test", "r") as f:
-#     lines = f.readlines()
-#     # Output should be [p, L, P, v, t, s]
-
 items = []
 first_compartment = []
 second_compartment = []
 item_duplicate = set()
+total_duplicates = []
 find_priority = []
 
 priority_dict = {
@@ -76,16 +73,16 @@ for line in lines:
 for i in range(len(first_compartment)):
     for j in range(len(first_compartment[i])):
         if first_compartment[i][j] in second_compartment[i]:
-            print(first_compartment[i][j])
             item_duplicate.add(first_compartment[i][j])
+    for k in item_duplicate:
+        total_duplicates.append(k)
+    item_duplicate = set()
 
 
-for i in item_duplicate:
+for i in total_duplicates:
     if i in priority_dict:
         find_priority.append(priority_dict.get(i))
 
 
 priority_sum = sum(find_priority)
 print(priority_sum)
-
-# Gives correct answer for test, but not puzzle input
